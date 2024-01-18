@@ -1,20 +1,24 @@
 import React from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 
-const Logout = ({ token, onLogout }) => {
-    const handleLogout = async () => {
-        try {
-            await axios.post('http://localhost:3001/logout', { token });
-            onLogout();
-        } catch (error) {
-            console.error('Logout failed', error);
-        }
+const Logout = () => {
+    {
+        localStorage.removeItem('token')
+        localStorage.removeItem('_id')
+        localStorage.removeItem('name')
+        localStorage.removeItem('email')
+        localStorage.removeItem('mobile')
+        localStorage.removeItem('address')
+        localStorage.removeItem('city')
+        localStorage.removeItem('gender')
+        localStorage.removeItem('role')
+        localStorage.removeItem('info')
     }
     return (
         <>
             <div>
-                <h2>Logout</h2>
-                <button onClick={handleLogout}>Logout</button>
+                <Navigate to="/login" />
             </div>
         </>
     );

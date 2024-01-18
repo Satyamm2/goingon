@@ -9,6 +9,9 @@ import HomeNewComponent from "../pages/home/indexNewComponent.js";
 import MatchDetails from "../pages/home/matchDetails/index.js";
 import Signup from "../pages/signup/index.js";
 import { Design } from "../pages/design/index.js";
+import UserHome from "../pages/home/userHome/index.js";
+import Logout from "../pages/logout/index.js";
+import Product from "../pages/product/index.js";
 
 function PersonalRoutes() {
     return (
@@ -17,10 +20,13 @@ function PersonalRoutes() {
                 <Route path="/" element={<HomeModal />} />
                 <Route path="/match-details/:id" element={<MatchDetails />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/logout" element={<Logout />} />
+                <Route path="/user" element={<UserHome />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/weather" element={<Weather />} />
                 <Route path="/todo" element={<Todo />} />
                 <Route path="/design" element={<Design />} />
+                <Route path="/product" element={<Product />} />
             </Routes>
         </>
     );

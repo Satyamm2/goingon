@@ -22,7 +22,7 @@ const Modal = ({ data, onClose }) => {
                             </tr>
                         </>
                     ))}</p>
-                    <button className="bg-black text-white rounded px-3 py-1 mt-1" onClick={onClose}>Close</button>
+                    <button className="bg-black text-white hover:text-gray-500 rounded px-3 py-1 mt-1" onClick={onClose}>Close</button>
                 </div>
             </div>
         </>
@@ -117,7 +117,7 @@ const HomeModal = () => {
                                         <td class="py-2 px-4 border-b">{data?.matchType}</td>
                                         <td class="py-2 px-4 border-b">{data?.status}</td>
                                         <td class="py-2 px-4 border-b">{data?.venue}</td>
-                                        <td class="py-2 px-4 border-b"><button onClick={() => openModal(index)}>Select</button></td>
+                                        <td class="py-2 px-4 border-b"><button className="hover:text-gray-500" onClick={() => openModal(index)}>Select</button></td>
                                     </tr>
                                 ))}
                             </tbody>

@@ -6,7 +6,7 @@ import PersonalRoutes from './routes/routes';
 function App() {
   return (
     <>
-      <div className="bg-[#f7f7fc] w-full h-screen">
+      <div className="bg-[#f7f7fc] w-full h-full">
         <Router>
           <Navbar />
           <PersonalRoutes />
