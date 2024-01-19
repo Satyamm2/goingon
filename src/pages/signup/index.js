@@ -27,6 +27,8 @@ function Signup({ onSignUp }) {
         gender: ""
     });
 
+    const [registrationStatus, setRegistrationStatus] = useState(null);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -42,12 +44,24 @@ function Signup({ onSignUp }) {
             const response = await axios.post("http://localhost:3001/user/save", formData);
             if (response) {
                 console.log("Registration Successful");
+                setRegistrationStatus("Successfully registered");
+                setFormData({
+                    name: "",
+                    email: "",
+                    password: "",
+                    mobile: "",
+                    address: "",
+                    city: "",
+                    gender: ""
+                });
             } else {
                 console.log("Registration failed");
+                setRegistrationStatus("Registration failed");
             }
 
         } catch (error) {
             console.log("Error", error);
+            setRegistrationStatus("Registration failed");
         }
 
     }
@@ -87,6 +101,10 @@ function Signup({ onSignUp }) {
                             <input type="text" name="gender" value={formData.gender} onChange={handleChange} className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" placeholder="male/female/others" required />
                         </div>
                         <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">SignUp</button>
+
+                        {registrationStatus && (
+                            <p className={`text-center mt-4 ${registrationStatus === 'Successfully registered' ? 'text-green-500' : 'text-red-500'}`}>{registrationStatus}</p>
+                        )}
                     </form>
                 </div>
             </div>
