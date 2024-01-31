@@ -14,6 +14,7 @@ import Addtocart from "../pages/addTocart/index.js";
 import About from "../pages/about/index.js";
 import Contact from "../pages/contact/index.js";
 import LiveScore from "../pages/livescore/index.js";
+import Counter from "../pages/counter/index.js";
 
 function PersonalRoutes() {
     return (
@@ -33,6 +34,7 @@ function PersonalRoutes() {
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/livescore" element={<LiveScore />} />
+                <Route path="/counter" element={<Counter />} />
             </Routes>
         </>
     );

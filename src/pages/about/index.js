@@ -1,9 +1,9 @@
 import React from "react";
 
-function About(){
-    return(
+function About() {
+    return (
         <>
-        <span>About Coming Soon!!!</span>
+            <span>About Coming Soon!!!</span>
         </>
     );
 };

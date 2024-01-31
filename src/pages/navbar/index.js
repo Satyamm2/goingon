@@ -20,7 +20,7 @@ function generateNavbar(role, username) {
                     </div>
                     {/* home */}
                     {/* logo */}
-                    <div className="flex font-bold items-center justify-center">GoingOn</div>
+                    <div className="flex font-bold text-lg items-center justify-center text-red-600">GoingOn</div>
                     {/* logo */}
                     {/* login */}
                     <div className="flex justify-end gap-2">
