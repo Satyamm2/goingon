@@ -48,7 +48,7 @@ function generateNavbar(role, username) {
     } else {
         return (
             <>
-                <div className="grid grid-cols-3 w-full px-2 h-8 border-2 rounded-l-md bg-white">
+                <div className="grid grid-cols-3 w-full px-2 h-8 border-2 rounded-l-md fixed top-0 left-0 z-50 bg-white">
                     {/* home */}
                     <div className="flex gap-2">
                         <Link to="/" className="hover:bg-gray-300 px-1 cursor-pointer rounded-md">Home</Link>
