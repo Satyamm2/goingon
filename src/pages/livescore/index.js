@@ -111,7 +111,7 @@ const LiveScore = () => {
                             </thead>
                             <tbody>
                                 {liveScore.map((data, index) => (
-                                    <tr key={index}>
+                                    <tr key={index} className={index%2==0?`bg-gray-300 text-xs`:`bg-gray-100 text-xs` }>
                                         <td class="py-2 px-4 border-b">{index}</td>
                                         <td class="py-2 px-4 border-b">{data?.name}</td>
                                         <td class="py-2 px-4 border-b">{data?.matchType}</td>

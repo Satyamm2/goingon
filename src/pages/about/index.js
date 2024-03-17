@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 function About() {
-    const [users, setUsers] = useState();
+    const [users, setUsers] = useState([]);
     const [searchUser, setSearchUser] = useState('');
     useEffect(() => {
         axios.get("https://reqres.in/api/users?page=2")
@@ -26,11 +26,11 @@ function About() {
                             <span className="text-4xl font-bold ">Hello ReqRes users!</span>
                         </div>
                         <div className="flex flex-col w-full">
-                            <input 
+                            <input
                                 type="text"
                                 placeholder="Search by name"
                                 value={searchUser}
-                                onChange={(e)=> setSearchUser(e.target.value)}
+                                onChange={(e) => setSearchUser(e.target.value)}
                                 className="p-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
                             />
                             <div className="grid grid-cols-4 gap-6 p-2">
@@ -49,5 +49,6 @@ function About() {
         </>
     );
 };
+
 
 export default About;

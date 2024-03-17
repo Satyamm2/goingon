@@ -5,7 +5,8 @@ import Home from "../pages/home/index.js";
 import Weather from "../pages/weather/index.js";
 import Todo from "../pages/toDo/index.js";
 import MatchDetails from "../pages/home/matchDetails/index.js";
-import Signup from "../pages/signup/index.js";
+// import Signup from "../pages/signup/index.js";
+import Signup from "../pages/signup/YupFormValidation.js";
 import { Design } from "../pages/design/index.js";
 import UserHome from "../pages/home/userHome/index.js";
 import Logout from "../pages/logout/index.js";
@@ -16,6 +17,16 @@ import Contact from "../pages/contact/index.js";
 import LiveScore from "../pages/livescore/index.js";
 import Counter from "../pages/counter/index.js";
 import TableTesting from "../pages/testingTable/index.js";
+import UserProfile from "../pages/userProfile/index.js";
+import Protected_Routes from "./protectedRoutes.js";
+
+const Auth = ({ element }) => {
+    let token = localStorage.getItem('token');
+    if (!token) {
+        return <Home />;
+    }
+    return <>{element}</>;
+};
 
 function PersonalRoutes() {
     return (
@@ -37,6 +48,8 @@ function PersonalRoutes() {
                 <Route path="/livescore" element={<LiveScore />} />
                 <Route path="/counter" element={<Counter />} />
                 <Route path="/table" element={<TableTesting />} />
+                {/* <Route path="/user-profile" element={<Protected_Routes Component={UserProfile} />} /> */}
+                <Route path="/user-profile" element={<Auth element={<UserProfile />} />} />
             </Routes>
         </>
     );

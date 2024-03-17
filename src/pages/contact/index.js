@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 function Contact() {
-    const [list, setList] = useState();
+    const [list, setList] = useState([]);
     useEffect(() => {
         axios.get("https://reqres.in/api/unknown")
             .then((response) => {
